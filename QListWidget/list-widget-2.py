@@ -11,7 +11,7 @@ class Example(QWidget):
 	def __init__(self):
 		super().__init__()
 		vbox = QVBoxLayout(self)
-		self.lw = QListWidget()
+		self.lw = QListWidget(objectName='list_test')
 
 		self.lw.addItem('Item #0')
 		self.lw.addItems(['Item #1', 'Item #2', 'Item #3', 'Item #4', ])
@@ -23,6 +23,13 @@ class Example(QWidget):
 
 		self.setGeometry(400, 300, 350, 250)
 		self.setWindowTitle('QListWidget')
+		if self.findChild(QListWidget, 'list_test'):
+			print('found')
+		else:
+			print('nope')
+		lw_list = self.findChildren(QListWidget)
+		for item in lw_list:
+			print(item.objectName())
 		self.show()
 
 	def item_double_clicked(self, item):
