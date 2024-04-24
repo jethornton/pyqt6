@@ -1,0 +1,109 @@
+
+* OpenGL classes have been moved to a separate PyQt6.QtOpenGL namespace:
+
+PyQt5:
+
+from PyQt5.QtGui import (QOpenGLBuffer, QOpenGLShader, QOpenGLShaderProgram,
+                         QOpenGLTexture)
+
+PyQt6:
+
+from PyQt6.QtOpenGL import (QOpenGLBuffer, QOpenGLShader, QOpenGLShaderProgram,
+                            QOpenGLTexture)
+
+* The QOpenGLWidget class has been moved to the PyQt6.QtOpenGLWidgets namespace:
+
+PyQt5:
+
+from PyQt5.QtWidgets import QApplication, QOpenGLWidget
+
+PyQt6:
+
+from PyQt6.QtOpenGLWidgets import QOpenGLWidget
+
+* Changed enum for shader types:
+
+PyQt5:
+
+self.program.addShaderFromSourceCode(QOpenGLShader.Vertex, vertShaderSrc)
+self.program.addShaderFromSourceCode(QOpenGLShader.Fragment, fragShaderSrc)
+
+PyQt6:
+
+self.program.addShaderFromSourceCode(QOpenGLShader.ShaderTypeBit.Vertex, vertShaderSrc)
+self.program.addShaderFromSourceCode(QOpenGLShader.ShaderTypeBit.Fragment, fragShaderSrc)
+
+* Changed enum Target texture:
+
+PyQt5:
+
+self.texture = QOpenGLTexture(QOpenGLTexture.Target2D)
+
+PyQt6:
+
+self.texture = QOpenGLTexture(QOpenGLTexture.Target.Target2D)
+
+* Changed enum for setting texture filters:
+
+PyQt5:
+
+self.texture.setMinMagFilters(QOpenGLTexture.Linear, QOpenGLTexture.Linear)
+
+PyQt6:
+
+self.texture.setMinMagFilters(QOpenGLTexture.Filter.Linear, QOpenGLTexture.Filter.Linear)
+
+* Changed enum for WrapMode:
+
+PyQt5:
+
+self.texture.setWrapMode(QOpenGLTexture.ClampToEdge)
+
+PyQt6:
+
+self.texture.setWrapMode(QOpenGLTexture.WrapMode.ClampToEdge)
+
+* Changed enum to set application attributes:
+
+PyQt5:
+
+QApplication.setAttribute(Qt.AA_UseDesktopOpenGL)
+
+PyQt6:
+
+QApplication.setAttribute(Qt.ApplicationAttribute.AA_UseDesktopOpenGL)
+
+A few basic non-graphical changes:
+
+* Changed enum for file open mode:
+
+PyQt5:
+
+file = QFile(path)
+if not file.open(QIODevice.ReadOnly):
+    print("Failed to open the file: " + path)
+
+PyQt6:
+
+file = QFile(path)
+if not file.open(QIODevice.OpenModeFlag.ReadOnly):
+    print("Failed to open the file: " + path)
+
+* The QApplication.exec_() method has been renamed to QApplication.exec()
+
+PyQt5:
+
+import sys
+from PyQt5.QtWidgets import QApplication
+
+app = QApplication(sys.argv)
+sys.exit(app.exec_())
+
+PyQt6:
+
+import sys
+from PyQt6.QtWidgets import QApplication
+
+app = QApplication(sys.argv)
+sys.exit(app.exec())
+

@@ -26,7 +26,7 @@ class QCodeEditor(QMainWindow):
 		central_widget = QWidget()
 		self.setCentralWidget(central_widget)
 		self.view = QPlainTextEdit()
-		layout = QHBoxLayout(central_widget)
+		layout = QVBoxLayout(central_widget)
 		layout.addWidget(self.view)
 
 		#print(self.view.isReadOnly())

@@ -7,11 +7,11 @@ from PyQt6 import uic
 class main(QMainWindow):
 	def __init__(self):
 		super().__init__()
-		uic.loadUi(os.path.join(os. getcwd(), 'load-ui.ui'), self)
+		path = os.path.join(os. getcwd(), 'oglw6-10.ui')
+		print(path)
+		uic.loadUi('oglw6-10.ui', self)
 		self.setGeometry(50, 50, 500, 300)
-		self.setWindowTitle("PyQT6 Load UI File!")
-		with open('style.qss','r') as fh:
-			self.setStyleSheet(fh.read())
+		self.setWindowTitle("PyQT6 Open GL Widget")
 		self.show()
 
 app = QApplication(sys.argv)

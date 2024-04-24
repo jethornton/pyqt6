@@ -7,10 +7,10 @@ from PyQt6 import uic
 class main(QMainWindow):
 	def __init__(self):
 		super().__init__()
-		uic.loadUi(os.path.join(os. getcwd(), 'load-ui.ui'), self)
+		uic.loadUi(os.path.join(os. getcwd(), 'toolbar_test.ui'), self)
 		self.setGeometry(50, 50, 500, 300)
 		self.setWindowTitle("PyQT6 Load UI File!")
-		with open('style.qss','r') as fh:
+		with open('touch.qss','r') as fh:
 			self.setStyleSheet(fh.read())
 		self.show()
 

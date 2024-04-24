@@ -1,0 +1,9 @@
+QTabBar::tab {
+	border: 2px solid #C4C4C3;
+	border-bottom-color: #C2C7CB; /* same as the pane color */
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	min-width: 100px;
+	min-height: 75px;
+	padding: 0px;
+}

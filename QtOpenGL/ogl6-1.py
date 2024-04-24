@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys # we'll need this later to run our Qt application
+from functools import partial
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget
 from PyQt6.QtWidgets import QVBoxLayout, QSlider
 
@@ -10,11 +12,9 @@ from PyQt6.QtOpenGLWidgets import QOpenGLWidget # provides QGLWidget, a special 
 import OpenGL.GL as gl # python wrapping of OpenGL
 from OpenGL import GLU # OpenGL Utility Library, extends OpenGL functionality
 
-import sys # we'll need this later to run our Qt application
 
 from OpenGL.arrays import vbo
 import numpy as np
-
 
 class GLWidget(QOpenGLWidget):
 	def __init__(self, parent=None):
@@ -78,8 +78,7 @@ class GLWidget(QOpenGLWidget):
 				 [1.0, 0.0, 1.0],
 				 [1.0, 1.0, 1.0],
 				 [0.0, 1.0, 1.0]])
-		self.vertVBO = vbo.VBO(np.reshape(self.cubeVtxArray,
-										  (1, -1)).astype(np.float32))
+		self.vertVBO = vbo.VBO(np.reshape(self.cubeVtxArray, (1, -1)).astype(np.float32))
 		self.vertVBO.bind()
 
 		self.cubeClrArray = np.array(
@@ -91,8 +90,7 @@ class GLWidget(QOpenGLWidget):
 				 [1.0, 0.0, 1.0],
 				 [1.0, 1.0, 1.0],
 				 [0.0, 1.0, 1.0 ]])
-		self.colorVBO = vbo.VBO(np.reshape(self.cubeClrArray,
-										   (1, -1)).astype(np.float32))
+		self.colorVBO = vbo.VBO(np.reshape(self.cubeClrArray, (1, -1)).astype(np.float32))
 		self.colorVBO.bind()
 
 		self.cubeIdxArray = np.array(
@@ -121,14 +119,7 @@ class MainWindow(QMainWindow):
 		self.setWindowTitle('PyQt6 OpenGL App')
 
 		self.glWidget = GLWidget(self)
-		self.initGUI()
 
-		timer = QTimer(self)
-		timer.setInterval(20)   # period, in milliseconds
-		timer.timeout.connect(self.glWidget.update)
-		timer.start()
-
-	def initGUI(self):
 		central_widget = QWidget()
 		gui_layout = QVBoxLayout()
 		central_widget.setLayout(gui_layout)
@@ -138,19 +129,25 @@ class MainWindow(QMainWindow):
 		gui_layout.addWidget(self.glWidget)
 
 		sliderX = QSlider(Qt.Orientation.Horizontal)
-		sliderX.valueChanged.connect(lambda val: self.glWidget.setRotX(val))
+		#sliderX.valueChanged.connect(lambda val: self.glWidget.setRotX(val))
+		sliderX.valueChanged.connect(self.glWidget.setRotX)
 
 		sliderY = QSlider(Qt.Orientation.Horizontal)
-		sliderY.valueChanged.connect(lambda val: self.glWidget.setRotY(val))
+		#sliderY.valueChanged.connect(lambda val: self.glWidget.setRotY(val))
+		sliderY.valueChanged.connect(self.glWidget.setRotY)
 
 		sliderZ = QSlider(Qt.Orientation.Horizontal)
-		sliderZ.valueChanged.connect(lambda val: self.glWidget.setRotZ(val))
+		#sliderZ.valueChanged.connect(lambda val: self.glWidget.setRotZ(val))
+		sliderZ.valueChanged.connect(self.glWidget.setRotZ)
 
 		gui_layout.addWidget(sliderX)
 		gui_layout.addWidget(sliderY)
 		gui_layout.addWidget(sliderZ)
 
-
+		timer = QTimer(self)
+		timer.setInterval(20)   # period, in milliseconds
+		timer.timeout.connect(self.glWidget.update)
+		timer.start()
 
 app = QApplication(sys.argv)
 win = MainWindow()
