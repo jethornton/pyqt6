@@ -36,6 +36,10 @@ class QCodeEditor(QMainWindow):
 		self.view.updateRequest.connect(self.updateLineNumberArea)
 		self.view.cursorPositionChanged.connect(self.highlightCurrentLine)
 		self.updateLineNumberAreaWidth(0)
+		with open('key_dark.qss', 'r') as f:
+			self.setStyleSheet(f.read())
+
+
 		self.show()
 
 	def lineNumberAreaWidth(self):
@@ -69,6 +73,7 @@ class QCodeEditor(QMainWindow):
 			selection = QTextEdit.ExtraSelection()
 			lineColor = QColor('yellow').lighter(160)
 			selection.format.setBackground(lineColor)
+			selection.format.setForeground(QColor('black'))
 			selection.format.setProperty(QTextFormat.Property.FullWidthSelection, True)
 			selection.cursor = self.view.textCursor()
 			selection.cursor.clearSelection()
