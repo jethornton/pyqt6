@@ -1,0 +1,94 @@
+QWidget {
+background: rgba(0, 0, 0, 60%);
+}
+
+QLabel#label_1 {
+border: 2px solid rgb(26, 26, 255);
+}
+
+QLabel#label_2 {
+border: 2px solid rgb(255, 255, 153);
+}
+
+QLabel#label_3 {
+border: 2px solid rgb(51, 102, 255);
+}
+
+QLabel#label_4 {
+border: 2px solid rgb(102, 51, 0);
+}
+
+QLabel#label_5 {
+border: 2px solid rgb(255, 153, 0);
+}
+
+QLabel#label_6 {
+border: 2px solid rgb(0, 0, 153);
+}
+
+QLabel#label_7 {
+border: 2px solid rgb(255, 0, 0);
+}
+
+QLabel#label_8 {
+border: 2px solid rgb(255, 0, 102);
+}
+
+QLabel {
+color: rgb(230, 230, 230);
+background: rgb(38, 38, 38);
+padding: 4px;
+border: 3px solid rgb(0, 0, 153);
+border-radius: 6px;
+border-style: outset;
+margin: 4px;
+}
+
+QPushButton {
+color: rgb(230, 230, 230);
+background: rgb(38, 38, 38);
+padding: 4px;
+border: 3px solid rgb(0, 0, 153);
+border-radius: 6px;
+border-style: outset;
+margin: 4px;
+}
+
+QPushButton::disabled
+{
+background-color: rgb(64, 64, 64);
+color: rgb(128, 128, 128);
+border-color: rgb(0, 34, 102);
+}
+
+
+/* this is the default so not really needed */
+QTabWidget::tab-bar {
+	alignment: left;
+}
+
+QTabBar::tab {
+	background-color: rgba(192, 192, 192, 50%);
+	border: 2px solid #C4C4C3;
+	border-bottom-color: #C2C7CB; /* same as the pane color */
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	min-width: 8px;
+	padding: 2px;
+	margin-left:2px;
+	margin-right:2px;
+}
+
+QTabBar::tab:hover {
+	background-color: rgba(0, 192, 0, 40%); color: white;
+}
+
+QTabBar::tab:selected {
+	background-color: rgba(0, 192, 0, 80%);
+}
+
+QTabBar::tab:selected {
+    border-color: #9B9B9B;
+    border-bottom-color: #C2C7CB; /* same as pane color */
+}
+

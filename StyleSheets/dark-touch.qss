@@ -1,0 +1,34 @@
+/*-----QSpinBox & QDoubleSpinBox -----*/
+QSpinBox, 
+QDoubleSpinBox
+{
+	background-color: #525251;
+	color: #ffffff;
+	border: 1px solid #051a39;
+	border-radius: 3px;
+	padding: 2px;
+	min-height: 50px;
+}
+
+QSpinBox::up-button, QSpinBox::down-button,
+QDoubleSpinBox::up-button, QDoubleSpinBox::down-button
+{
+	background-color: #607cff;
+	border-radius: 2px;
+}
+
+QSpinBox::down-arrow,
+QDoubleSpinBox::down-arrow,
+QDateTimeEdit::down-arrow
+{
+	image: url(arrow-down.png);
+	width: 27px;
+}
+
+QSpinBox::up-arrow,
+QDoubleSpinBox::up-arrow,
+QDateTimeEdit::up-arrow
+{
+	image: url(arrow-up.png);
+	width: 7px;
+}

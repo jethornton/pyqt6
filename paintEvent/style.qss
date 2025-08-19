@@ -1,0 +1,10 @@
+QPushButton {
+	min-height: 50px;
+	min-width: 50px;
+}
+
+QPushButton:checked {
+	border-style: solid;
+	border-color: #00ff00;
+	border-width: 2px;
+}

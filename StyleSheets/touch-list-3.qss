@@ -1,0 +1,46 @@
+QListWidget::item {
+min-height: 50px;
+border: solid black 2px;
+}
+
+QScrollArea {
+    border: none;
+}
+
+QScrollBar {
+    background: gray;
+    border-radius: 5px;
+}
+
+QScrollBar:horizontal {
+    height: 13px;
+}
+
+QScrollBar:vertical {
+    width: 50px;
+}
+
+QScrollBar::handle {
+    background: green;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    height: 25px;
+    min-width: 10px;
+}
+
+QScrollBar::handle:vertical {
+    width: 25px;
+    min-height: 10px;
+}
+
+QScrollBar::add-line {
+    border: none;
+    background: none;
+}
+
+QScrollBar::sub-line {
+    border: none;
+    background: none;
+}

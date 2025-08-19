@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/">
+    <file>inX+.png</file>
+    <file>inX-.png</file>
+    <file>inX+Y+.png</file>
+    <file>inX+Y-.png</file>
+    <file>inX-Y+.png</file>
+    <file>inX-Y-.png</file>
+    <file>inY+.png</file>
+    <file>inY-.png</file>
+  </qresource>
+</RCC>

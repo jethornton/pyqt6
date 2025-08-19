@@ -1,0 +1,81 @@
+/*----- QAbstractSpinBox -----*/
+QAbstractSpinBox {
+	min-height: 35px;
+	border-radius: 8px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: rgb(80, 80, 80);
+	font-size: 20px;
+
+}
+
+QAbstractSpinBox:disabled {
+border-color: rgb(150, 150, 150);
+}
+
+QAbstractSpinBox:enabled:hover
+{
+    border-color: rgb(10, 10, 10);
+}
+QAbstractSpinBox::up-button {
+	subcontrol-origin: border;
+	subcontrol-position: right; /* position at the top right corner */
+
+	width: 30px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
+	border-image: url(:/images/spinup.png) 1;
+	border-width: 1px;
+	border-radius: 2px;
+	margin-top: 0px;
+	margin-right: 40px;
+}
+
+QAbstractSpinBox::up-button:hover {
+    border-image: url(:/images/spinup_hover.png) 1;
+}
+
+QAbstractSpinBox::up-button:pressed {
+    border-image: url(:/images/spinup_pressed.png) 1;
+}
+
+QAbstractSpinBox::up-arrow {
+    image: url(:/images/arrow_up.png);
+    width: 10px;
+    height: 15px;
+}
+
+QAbstractSpinBox::up-arrow:disabled, QSpinBox::up-arrow:off { /* off state when value is max */
+   image: url(:/images/arrow_up_disabled.png);
+}
+
+QAbstractSpinBox::down-button {
+	subcontrol-origin: border;
+	subcontrol-position: right; /* position at bottom right corner */
+
+	width: 30px;
+	border-image: url(:/images/spindown.png) 1;
+	border-width: 1px;
+	border-radius: 2px;
+	border-top-width: 0;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 0px;
+}
+
+QAbstractSpinBox::down-button:hover {
+    border-image: url(:/images/spindown_hover.png) 1;
+}
+
+QAbstractSpinBox::down-button:pressed {
+    border-image: url(:/images/spindown_pressed.png) 1;
+}
+
+QAbstractSpinBox::down-arrow {
+    image: url(:/images/arrow_down.png);
+    width: 10px;
+    height: 10px;
+}
+
+QAbstractSpinBox::down-arrow:disabled,
+QAbstractSpinBox::down-arrow:off { /* off state when value in min */
+   image: url(:/images/arrow_down_disabled.png);
+}

@@ -1,28 +1,17 @@
 #!/usr/bin/env python3
 
 import sys, os
-
-# disable cache usage must be before any local imports
-sys.dont_write_bytecode = True
-
 from PyQt6.QtWidgets import QMainWindow, QApplication
 from PyQt6 import uic
-
-import resources
 
 class MainWindow(QMainWindow):
 	def __init__(self):
 		super().__init__()
 
-		self.setGeometry(50, 50, 150, 100)
-		self.setWindowTitle('SpinBox QSS')
+		self.setGeometry(50, 150, 400, 400)
+		self.setWindowTitle('Main window')
 		uic.loadUi(os.path.join(os. getcwd(), 'load-ui.ui'), self)
-
-		#stylesheet = 'sb-dark.qss'
-		#stylesheet = 'dark-style.qss'
-		stylesheet = 'dark.qss'
-		#stylesheet = 'darkstyle.qss'
-		with open(stylesheet,'r') as fh:
+		with open('dark.qss','r') as fh:
 			self.setStyleSheet(fh.read())
 		self.show()
 

@@ -1,0 +1,9 @@
+sudo apt install qt6-base-dev
+
+rcc -g python -o resources.py resources.qrc
+
+# from PySide6 import QtCore <-- replace this line
+from PyQt6 import QtCore
+
+rcc -g python resources.qrc | sed '0,/PySide2/s//PyQt6/' > resources.py
+

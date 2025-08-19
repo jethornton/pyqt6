@@ -1,0 +1,11 @@
+
+The returned QRect object has several useful methods and attributes:
+
+x(), y(): Return the x and y coordinates of the top-left corner of the rectangle.
+width(), height(): Return the width and height of the rectangle.
+topLeft(), topRight(), bottomLeft(), bottomRight(): Return the coordinates of the corresponding corners as QPoint objects.
+center(): Returns the center point of the rectangle.
+contains(point): Checks if a given point is inside the rectangle.
+intersects(other_rect): Checks if the rectangle intersects with another rectangle.
+moveTopLeft(point), moveCenter(point), etc.: Methods to move the rectangle.
+setSize(size): Resizes the rectangle.

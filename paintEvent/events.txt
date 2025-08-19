@@ -1,0 +1,48 @@
+
+List of paint events in PyQt6:
+
+QEvent.Paint: Signals that a widget needs to be repainted. This is the most
+common paint event and is triggered when the widget is first shown, when it is
+resized, when it is uncovered by another window, or when update() or repaint()
+is called.
+
+QPaintEvent: Contains information about the region of the widget that needs to
+be repainted. It provides the rect() and region() methods to access the bounding
+rectangle and the exact region.
+
+QWidget.paintEvent(event): This is a virtual function in the QWidget class that
+is called when a paint event occurs. Subclasses should reimplement this function
+to perform custom drawing.
+
+QPainter: This class provides the drawing functions used within the paintEvent()
+method. It allows for drawing shapes, text, and images on the widget.
+
+QPainter.begin(widget): This function initializes the painter, associating it
+with the target widget. It must be called before any drawing operations.
+
+QPainter.end(): This function finalizes the painter, releasing any resources.
+It should be called after all drawing operations are complete.
+
+QPainter.fillRect(): Fills a rectangle with a specified brush.
+
+QPainter.drawRect(): Draws the outline of a rectangle.
+
+QPainter.drawLine(): Draws a line between two points.
+
+QPainter.drawText(): Draws text at a specified position.
+
+QPainter.drawPixmap(): Draws a pixmap (image) at a specified position.
+
+QPainter.setPen(): Sets the pen for drawing outlines.
+
+QPainter.setBrush(): Sets the brush for filling shapes.
+
+QPainter.setFont(): Sets the font for drawing text.
+
+QWidget.update(): Schedules a paint event for processing, causing the
+paintEvent() to be called eventually.
+
+QWidget.repaint(): Immediately calls the paintEvent().
+
+QAbstractScrollArea.scrollContentsBy(): Called when the scroll bars are moved,
+triggering a paint event to update the visible content.
