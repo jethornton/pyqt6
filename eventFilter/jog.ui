@@ -79,7 +79,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="key_released_lb">
+         <widget class="QLabel" name="jog_action_lb">
           <property name="text">
            <string>TextLabel</string>
           </property>
