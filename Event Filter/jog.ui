@@ -32,7 +32,7 @@
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QCheckBox" name="checkBox_2">
+            <widget class="QCheckBox" name="keyboard_jog_cb">
              <property name="text">
               <string>Enable Keyboard Jogging</string>
              </property>
@@ -79,7 +79,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="key_released_lb">
           <property name="text">
            <string>TextLabel</string>
           </property>
