@@ -83,7 +83,7 @@ class main(QMainWindow):
 		super().__init__()
 		uic.loadUi(os.path.join(os. getcwd(), 'jog.ui'), self)
 		self.setGeometry(50, 50, 300, 300)
-		self.setWindowTitle("PyQT6 Load UI File!")
+		self.setWindowTitle("PyQT6 Keyboard Jog Test!")
 		self.show()
 		commands.jog(self, True, 'X', '+')
 
