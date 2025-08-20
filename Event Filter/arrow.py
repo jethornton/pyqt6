@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import QTabWidget, QLabel, QVBoxLayout
 
 class TabShortcutEater(QObject):
 	def __init__(self, window):
-			super().__init__()
+		super().__init__()
 	def eventFilter(self, obj, event):
 		#print(f'event type {event.type()}')
 		if event.type() == QEvent.Type.KeyPress:
@@ -77,5 +77,4 @@ class MyWindow(QMainWindow):
 
 app = QApplication([])
 window = MyWindow()
-#window.show()
 app.exec()
